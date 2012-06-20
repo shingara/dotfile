@@ -1,3 +1,4 @@
+current_dir = File.dirname(__FILE__)
 namespace :zsh do
   desc "Install zsh"
   task :install do
@@ -8,7 +9,7 @@ namespace :zsh do
       system "git clone git://github.com/robbyrussell/oh-my-zsh.git #{zsh_dir}"
     end
     system "rm ~/.zshrc"
-    system "ln -s ~/dotfile/.zshrc ~/.zshrc"
+    system "ln -s #{File.join(current_dir, 'zshrc')} ~/.zshrc"
     unless ENV['SHELL'] =~ /zsh/
       system "chsh -s /bin/zsh"
     end
@@ -19,7 +20,7 @@ namespace :git do
   desc "install gitconfig"
   task :install do
     system "rm ~/.gitconfig"
-    system "ln -s ~/dotfile/gitconfig ~/.gitconfig"
+    system "ln -s #{File.join(current_dir, 'gitconfig')} ~/.gitconfig"
   end
 end
 
