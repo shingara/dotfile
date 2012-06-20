@@ -1,0 +1,18 @@
+[user]
+	name = Cyril Mougel
+  email = cyril.mougel@gmail.com
+[core]
+  editor = mvim -v
+[color]
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+[diff]
+  renames = true
+[github]
+	user = shingara
