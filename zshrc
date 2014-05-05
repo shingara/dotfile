@@ -22,7 +22,7 @@ export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails3 redis-cli ruby git brew vagrant osx rbenv)
+plugins=(rails redis-cli ruby git brew vagrant osx)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -30,6 +30,15 @@ source $ZSH/oh-my-zsh.sh
 alias vim="mvim -v"
 export GREP_OPTIONS=''
 export EDITOR='vim'
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-eval "$(rbenv init -)"
-eval "$(hub alias -s)"
+
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+
+RUBIES=(
+  ~/.rbenv/versions/*
+  /Users/shingara/.rubies/*
+)
+chruby 2.1.0
+
+export EDITOR='vim'
+export GOPATH=~/prog/go/shingara
