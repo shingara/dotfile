@@ -22,23 +22,12 @@ export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails redis-cli ruby git brew vagrant osx)
+plugins=(rails redis-cli ruby git)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-alias vim="mvim -v"
+alias vim="vim -v"
 export GREP_OPTIONS=''
-export EDITOR='vim'
-
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-
-RUBIES=(
-  ~/.rbenv/versions/*
-  /Users/shingara/.rubies/*
-)
-chruby 2.1.0
 
 export EDITOR='vim'
-export GOPATH=~/prog/go/shingara
