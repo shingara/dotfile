@@ -16,3 +16,5 @@
   renames = true
 [github]
 	user = shingara
+[push]
+	default = matching
