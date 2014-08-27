@@ -2,7 +2,7 @@
 	name = Cyril Mougel
   email = cyril.mougel@gmail.com
 [core]
-  editor = mvim -v
+  editor = vim -v
 [color]
   status = auto
   diff = auto
