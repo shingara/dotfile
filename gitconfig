@@ -12,9 +12,15 @@
   st = status
   ci = commit
   co = checkout
+	d = difftool
 [diff]
   renames = true
+	tool = vimdiff
 [github]
 	user = shingara
 [push]
 	default = matching
+[pull]
+  rebase = true
+[difftool]
+	prompt = false
