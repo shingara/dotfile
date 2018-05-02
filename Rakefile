@@ -24,5 +24,14 @@ namespace :git do
   end
 end
 
+namespace :tmux do
+  desc "install tmux.conf"
+  task :install do
+    system "rm ~/.tmux.conf"
+    system "ln -s #{File.join(current_dir, 'tmux.conf')} ~/.tmux.conf"
+  end
+end
+
+
 desc 'install all dotfile'
 task :install => ['git:install', 'zsh:install']

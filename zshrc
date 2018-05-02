@@ -2,6 +2,9 @@ export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
+export ZSH_TMUX_AUTOCONNECT=true
+export ZSH_TMUX_AUTOSTART=true
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -22,13 +25,13 @@ export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails redis-cli ruby git mosh ssh-agent)
+plugins=(rails redis-cli ruby git mosh ssh-agent rvm tig tmux bundler)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-alias vim="vim -v"
-export EDITOR='vim'
+alias vim="nvim"
+export EDITOR='nvim'
 export GREP_OPTIONS=''
 
 ## Test the platform
@@ -48,6 +51,6 @@ if [[ $platform == 'darwin' ]]; then
   source /usr/local/opt/chruby/share/chruby/auto.sh
 
   chruby 2.1
-else
-  export EDITOR='vim'
 fi
+
+
