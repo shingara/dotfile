@@ -8,6 +8,7 @@ namespace :zsh do
     else
       system "git clone git://github.com/robbyrussell/oh-my-zsh.git #{zsh_dir}"
     end
+    `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
     system "rm ~/.zshrc"
     system "ln -s #{File.join(current_dir, 'zshrc')} ~/.zshrc"
     unless ENV['SHELL'] =~ /zsh/

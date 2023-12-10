@@ -1,8 +1,9 @@
 [user]
-	name = Cyril Mougel
+  name = Cyril Mougel
   email = cyril.mougel@gmail.com
 [core]
-  editor = vim -v
+  editor = nvim
+	autocrlf = false
 [color]
   status = auto
   diff = auto
@@ -12,15 +13,20 @@
   st = status
   ci = commit
   co = checkout
-	d = difftool
+  d = difftool
 [diff]
   renames = true
-	tool = vimdiff
+  tool = vimdiff
 [github]
-	user = shingara
+  user = shingara
 [push]
-	default = matching
+  default = matching
 [pull]
-  rebase = true
+  #rebase = true
 [difftool]
-	prompt = false
+  prompt = false
+[pager]
+  grep = false
+	branch = false
+[diff "rails_credentials"]
+	textconv = bin/rails credentials:diff

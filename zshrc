@@ -2,14 +2,16 @@ export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
-export ZSH_TMUX_AUTOCONNECT=true
-export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOCONNECT=false
+export ZSH_TMUX_AUTOSTART=false
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="tjkirch"
+#export ZSH_THEME="tjkirch"
+export ITERM2_SQUELCH_MARK=1
+export ZSH_THEME="candy"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -45,12 +47,11 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
   platform='darwin'
 fi
 
+export NVM_DIR="$HOME/.nvm"
 
-if [[ $platform == 'darwin' ]]; then
-  source /usr/local/opt/chruby/share/chruby/chruby.sh
-  source /usr/local/opt/chruby/share/chruby/auto.sh
-
-  chruby 2.1
-fi
+## NVIM with Homebrew
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
