@@ -20,7 +20,7 @@ end
 namespace :git do
   desc "install gitconfig"
   task :install do
-    system "rm ~/.gitconfig"
+    system "rm -rf ~/.gitconfig"
     system "ln -s #{File.join(current_dir, 'gitconfig')} ~/.gitconfig"
   end
 end
