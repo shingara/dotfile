@@ -2,18 +2,18 @@ current_dir = File.dirname(__FILE__)
 namespace :zsh do
   desc "Install zsh"
   task :install do
-    zsh_dir = File.join(ENV['HOME'], '.oh-my-zsh')
-    if Dir.exists?(zsh_dir)
-      system "cd #{zsh_dir} && git pull"
-    else
-      system "git clone git://github.com/robbyrussell/oh-my-zsh.git #{zsh_dir}"
-    end
+   #  zsh_dir = File.join(ENV['HOME'], '.oh-my-zsh')
+   #  if Dir.exists?(zsh_dir)
+   #    system "cd #{zsh_dir} && git pull"
+   #  else
+   #    system "git clone git://github.com/robbyrussell/oh-my-zsh.git #{zsh_dir}"
+   #  end
     `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
     system "rm ~/.zshrc"
     system "ln -s #{File.join(current_dir, 'zshrc')} ~/.zshrc"
-    unless ENV['SHELL'] =~ /zsh/
-      system "chsh -s /bin/zsh"
-    end
+    # unless ENV['SHELL'] =~ /zsh/
+    #   system "chsh -s /bin/zsh"
+    # end
   end
 end
 
